@@ -6,10 +6,12 @@ module.exports = {
   devtool: 'eval',
   output: {
     path: path.join(__dirname, '/public'),
+    // publicPath: '/public/',
     filename: 'bundle.js'
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
+    // publicPath: '/public/',
     compress: true,
     historyApiFallback: true
   },
@@ -28,6 +30,10 @@ module.exports = {
         test: /\.jsx?$/,
         loader: 'eslint-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       },
       {
         include: path.resolve(__dirname, 'js'),
