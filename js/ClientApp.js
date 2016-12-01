@@ -1,30 +1,19 @@
-var div = React.DOM.div
-var h1 = React.DOM.h1
-
-var MyTitle = React.createClass({
-    render() {
-        return (
-            div(null,
-                h1( { style: { color: this.props.colour } }, this.props.title)
-            )
-        )
-    }
-})
-
-var MyTitleFactory = React.createFactory(MyTitle)
+import React from 'react'
+import ReactDOM from 'react-dom'
+import MyTitle from './MyTitle'
 
 var MyFirstComponent = React.createClass({
-    render () {
-        return (
-            React.DOM.div(null,
-                MyTitleFactory({ title: 'props are the best', colour: 'rebeccapurple' }),
-                MyTitleFactory({ title: 'semicolons are the worst', colour: 'hotpink' }),
-                MyTitleFactory({ title: 'I really need a pee', colour: 'peachpuff' }),
-                MyTitleFactory({ title: 'Imelda and her keys', colour: 'dodgerblue' }),
-                MyTitleFactory({ title: 'What a bottlenose chump', colour: 'wheat' })
-            )
-        )
-    }
+  render () {
+    return (
+      <div>
+        <MyTitle title='props are the best' colour='rebeccapurple' />
+        <MyTitle title='semicolons are the worst' colour='hotpink' />
+        <MyTitle title='I really need a pee' colour='peachpuff' />
+        <MyTitle title='Imelda and her keys' colour='dodgerblue' />
+        <MyTitle title='What a bottlenose chump' colour='wheat' />
+      </div>
+    )
+  }
 })
 
 ReactDOM.render(React.createElement(MyFirstComponent), document.getElementById('app'))
