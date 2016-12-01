@@ -6,9 +6,10 @@
   "author": "Brian Holt <btholt@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "standard --fix",
+    "lint": "eslint js/**/*.js js/**/*.jsx webpack.config.js",
     "build": "webpack",
     "build:production": "webpack -p",
+    "dev": "webpack-dev-server",
     "watch": "npm run build -- --watch"
   },
   "dependencies": {
