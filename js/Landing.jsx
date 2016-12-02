@@ -41,6 +41,7 @@ const mapStateToProps = (state) => {
   }
 }
 
+// alt way of abstracting dispatch of redux actions
 const mapDispatchToProps = (dispatch) => {
   return {
     dispatchSetSearchTerm (searchTerm) {
