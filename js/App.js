@@ -15,7 +15,10 @@ const App = () => {
         <Match
           exactly
           pattern='/'
-          component={(props) => <AsyncRoute props={props} loadingPromise={System.import('./Landing')} />}
+          component={(props) => <AsyncRoute
+            props={props}
+            loadingPromise={System.import('./Landing')}
+          />}
         />
         <Match
           pattern='/search'

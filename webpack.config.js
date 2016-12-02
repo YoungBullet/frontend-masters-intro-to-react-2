@@ -5,7 +5,7 @@ module.exports = {
   entry: './js/ClientApp.jsx',
   devtool: 'eval',
   output: {
-    path: path.join(__dirname, '/public/dist'),
+    path: path.join(__dirname, '/public'),
     filename: 'bundle.js',
     publicPath: '/public/'
   },
