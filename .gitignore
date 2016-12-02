@@ -1,6 +1,7 @@
 node_modules/
 coverage/
 __snapshots__
-dist/
 .DS_Store
 npm-debug.log
+*bundle.js
+*bundle*

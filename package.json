@@ -13,7 +13,8 @@
     "watch": "npm run build -- --watch",
     "test": "NODE_ENV=test jest",
     "update-test": "npm run test -- -u",
-    "cover": "npm run test -- --coverage"
+    "cover": "npm run test -- --coverage",
+    "start": "NODE_ENV=server node server.js"
   },
   "jest": {
     "moduleFileExtensions": ["js", "jsx", "json"],
