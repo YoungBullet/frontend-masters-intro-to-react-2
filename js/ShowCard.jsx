@@ -2,7 +2,7 @@ import React from 'react'
 const { string } = React.PropTypes
 
 const ShowCard = React.createClass({
-  PropTypes: {
+  propTypes: {
     poster: string.isRequired,
     title: string.isRequired,
     year: string.isRequired,

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import ShowCard from './ShowCard'
 import preload from '../public/data.json'
 
@@ -18,7 +19,7 @@ const Search = React.createClass({
     return (
       <div className='search'>
         <header>
-          <h1>Nutflix: {this.state.searchTerm}</h1>
+          <h1><Link to='/'>Nutflix:</Link> {this.state.searchTerm}</h1>
           <form onSubmit={this.handleSearchTermSubmit}>
             <input onChange={this.handleSearchTermChange} value={this.state.searchTerm} type='text' placeholder='Search…' />
           </form>
@@ -27,10 +28,11 @@ const Search = React.createClass({
           {preload.shows
             .filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)
             .map(show => {
-            return (
-              <ShowCard key={show.imdbID} {...show} />
-            )
-          })}
+              return (
+                <ShowCard key={show.imdbID} {...show} />
+              )
+            })
+          }
         </div>
       </div>
     )

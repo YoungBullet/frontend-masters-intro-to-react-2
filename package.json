@@ -10,7 +10,14 @@
     "build": "webpack",
     "build:production": "webpack -p",
     "dev": "webpack-dev-server",
-    "watch": "npm run build -- --watch"
+    "watch": "npm run build -- --watch",
+    "test": "NODE_ENV=test jest",
+    "update-test": "npm run test -- -u",
+    "cover": "npm run test -- --coverage"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "jsx", "json"],
+    "coverageDirectory": "js/tests/coverage"
   },
   "dependencies": {
     "axios": "0.15.2",

@@ -5,13 +5,12 @@ module.exports = {
   entry: './js/App.jsx',
   devtool: 'eval',
   output: {
-    path: path.join(__dirname, '/public'),
-    // publicPath: '/public/',
+    path: path.join(__dirname, '/public/dist'),
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    // publicPath: '/public/',
+    contentBase: path.join(__dirname, '/public'),
+    // publicPath: '/',
     compress: true,
     historyApiFallback: true
   },
