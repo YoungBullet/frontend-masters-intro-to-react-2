@@ -1,9 +1,10 @@
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = {
   context: __dirname,
   entry: './js/ClientApp.jsx',
-  devtool: 'eval',
+  // devtool: 'eval',
   output: {
     path: path.join(__dirname, '/public'),
     filename: 'bundle.js',
@@ -14,8 +15,24 @@ module.exports = {
     compress: true,
     historyApiFallback: true
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: true
+      }
+    })
+  ],
   resolve: {
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.js', '.jsx', '.json'],
+    alias: {
+      react: 'preact-compat',
+      'react-dom': 'preact-compat'
+    }
   },
   stats: {
     colors: true,
@@ -35,7 +52,10 @@ module.exports = {
         loader: 'json-loader'
       },
       {
-        include: path.resolve(__dirname, 'js'),
+        include: [
+          path.resolve(__dirname, 'js'),
+          path.resolve('node_modules/preact-compat/src')
+        ],
         test: /\.jsx?$/,
         loader: 'babel-loader'
       },
