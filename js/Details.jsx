@@ -28,8 +28,8 @@ const Details = React.createClass({
   render () {
     const { title, description, year, poster, trailer } = this.props.show
     // console.log(this.state.omdbData)
-    const rating = this.props.omdbData.imdbRating ? <h3>{this.props.omdbData.imdbRating}</h3> : <img src='/img/loading.png' alt='Loading' />
-    const actors = this.props.omdbData.Actors ? <p>{this.props.omdbData.Actors}</p> : <img src='/img/loading.png' alt='Loading' />
+    const rating = this.props.omdbData.imdbRating ? <h3>{this.props.omdbData.imdbRating}</h3> : <img src='/public/img/loading.png' alt='Loading' />
+    const actors = this.props.omdbData.Actors ? <p>{this.props.omdbData.Actors}</p> : <img src='/public/img/loading.png' alt='Loading' />
     return (
       <div className='details'>
         <Header />
@@ -37,7 +37,7 @@ const Details = React.createClass({
           <h1>{title}</h1>
           <h2>({year})</h2>
           {rating}
-          <img src={`/img/posters/${poster}`} />
+          <img src={`/public/img/posters/${poster}`} />
           <p>{description}</p>
           {actors}
         </section>

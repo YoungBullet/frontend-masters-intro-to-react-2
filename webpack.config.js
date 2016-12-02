@@ -2,15 +2,15 @@ const path = require('path')
 
 module.exports = {
   context: __dirname,
-  entry: './js/App.jsx',
+  entry: './js/ClientApp.jsx',
   devtool: 'eval',
   output: {
     path: path.join(__dirname, '/public/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: '/public/'
   },
   devServer: {
-    contentBase: path.join(__dirname, '/public'),
-    // publicPath: '/',
+    publicPath: '/',
     compress: true,
     historyApiFallback: true
   },
