@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router'
+import Header from './Header'
 import ShowCard from './ShowCard'
 const { arrayOf, shape, string } = React.PropTypes
 
@@ -24,12 +24,12 @@ const Search = React.createClass({
   render () {
     return (
       <div className='search'>
-        <header>
-          <h1><Link to='/'>Nutflix:</Link> {this.state.searchTerm}</h1>
-          <form onSubmit={this.handleSearchTermSubmit}>
-            <input onChange={this.handleSearchTermChange} value={this.state.searchTerm} type='text' placeholder='Search…' />
-          </form>
-        </header>
+        <Header
+          showSearch
+          searchTerm={this.state.searchTerm}
+          handleSearchTermSubmit={this.handleSearchTermSubmit}
+          handleSearchTermChange={this.handleSearchTermChange}
+          />
         <div>
           {this.props.shows
             .filter(show => `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0)

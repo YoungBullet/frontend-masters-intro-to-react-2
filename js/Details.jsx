@@ -1,24 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router'
+import Header from './Header'
 const { shape, string } = React.PropTypes
 
 const Details = React.createClass({
   propTypes: {
     show: shape({
-      title: string,
-      description: string,
-      year: string,
-      poster: string,
-      trailer: string
+      title: string.isRequired,
+      description: string.isRequired,
+      year: string.isRequired,
+      poster: string.isRequired,
+      trailer: string.isRequired
     })
   },
   render () {
     const { title, description, year, poster, trailer } = this.props.show
     return (
       <div className='details'>
-        <header>
-          <h1><Link to='/'>Nutflix</Link></h1>
-        </header>
+        <Header />
         <section>
           <h1>{title}</h1>
           <h2>({year})</h2>
